@@ -1,0 +1,332 @@
+h2
+{
+    font-size: 16px;
+}
+h3, label
+{
+    margin-top: 3px;
+    font-size: 14px;
+}
+h4
+{
+    font-size: 11px;
+}
+h5
+{
+    font-size: 10px;
+}
+
+h2, h3, h4, h5, label
+{
+    text-shadow: 0px 0px 1px;
+}
+
+.contenedor
+{
+    border-radius: 5px;
+    width: auto;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    background-color: transparent; 
+    z-index: 0;
+}
+
+.opciones
+{
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.opciones h2
+{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 10px 0px 20px;
+    border-radius: 0px 100% 0px 0px;
+    border-top-right-radius: 50px 50px;
+    box-shadow: -4px -4px 5px -1px #888888;
+    background-color: white;
+}
+
+.contenidos
+{
+    z-index: 0;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 0px 10px 2px #888888;
+    background-color: white;
+}
+.contenidos .imput
+{
+    border: none;
+    border-bottom: 3px solid rgb(251, 137, 22);
+    margin: 0px 3px 5px 3px;
+    outline: none;
+}
+.contenidos .imput:focus
+{
+    border-bottom: 3px solid rgb(2, 157, 224);
+}
+
+.categorias
+{
+    background-color: white;
+    width: 100px;
+    height: 265px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+button
+{
+    border: none;
+    border-radius: 5px;
+    width: 70px;
+    height: 25px;
+    background-color: rgb(251, 137, 22);
+    box-shadow: 0px 0px 5px 1px #888888;
+    cursor: pointer;
+    color: white;
+    overflow: hidden;
+    padding: 1px;
+    margin-top: 10%;
+    /* transition: background-color 0.5s;
+    transition-timing-function: linear; */
+}
+button:hover
+{
+    background-color: rgb(255, 181 ,48);
+}
+button:active
+{
+    background-color: rgb(251, 137, 22);
+}
+
+.producto
+{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 104px;
+    height: 265px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.img-product
+{
+    width: 30px;
+    height: 40px;
+    margin: 8px 0px 0px 2.5px;
+    background-color: rgb(251, 137, 22);
+    padding: 1px 6px 1px 6px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 5px 1px #888888;
+    cursor: pointer;
+}
+.product_info
+{
+    margin: 10px 0px 0px 0px;
+}
+.img-product:hover
+{
+    background-color: rgb(255, 181 ,48);
+}
+.img-product:active
+{
+    background-color: rgb(251, 137, 22);
+}
+
+.barra-busqueda
+{
+    display: flex;
+    flex-direction: row;
+    padding: 3px 0px 3px 0px;
+    background-color: white;
+}
+label
+{
+    cursor: pointer;
+}
+.barra-busqueda img
+{
+    width: 20px;
+    height: 20px;
+    margin: 0px 5px 0px 5px;
+}
+
+.crud
+{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    padding-top: 10px;
+}
+.datos_crud
+{
+    margin-left: 12px;
+}
+textarea
+{
+    width: 100px;
+    height: 155px;
+    border: 3px solid rgb(251, 137, 22);
+    box-shadow: 0px 0px 10px 1px #888888;
+    background-color: white;
+    resize: none;
+    outline: none;
+    margin: 0px 16.8px 0px 0px;
+}
+
+textarea:focus
+{
+    border: 3px solid rgb(2, 157, 224);
+}
+
+.textespec
+{
+    margin: 0px 5px 5px 5px;
+    display: flex;
+    flex-direction: column;
+}
+.textespec button
+{
+    margin-left: 40px;
+}
+
+.text-file
+{
+    display: none;
+}
+
+.camara
+{
+    width: 25px;
+    height: 20px;
+}
+.span-camara
+{
+    width: 136px;
+    border: 3px solid rgb(251, 137, 22);
+}
+
+.camara-orden
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.barra-text
+{
+    width: 250px;
+}
+
+.encima_boton
+{
+    border: none;
+    border-radius: 5px;
+    width: 66px;
+    height: 25px;
+    background-color: rgb(251, 137, 22);
+    box-shadow: 0px 0px 5px 1px #888888;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    text-align: center;
+    margin-top: 8%;
+}
+.encima_boton:hover
+{
+    background-color: rgb(255, 181 ,48);
+}
+.encima_boton:focus
+{
+    background-color: rgb(251, 137, 22);
+}
+.encima_boton::placeholder
+{
+    color: white;
+}
+.encima_boton:focus
+{
+    border: 2px solid rgb(2, 157, 224);
+}
+select
+{
+    display: none;
+}
+.opciones_categorias
+{
+    width: 40px;
+    height: 20px;
+    font-size: 9px;
+    margin-left: 8px;
+}
+.opciones_categorias2
+{
+    width: 40px;
+    height: 20px;
+    font-size: 9px;
+}
+.direccion
+{
+    width: 280px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.pequenoButon
+{
+    position: relative;
+    top: 22.5%;
+    right: 10.5%;
+    background-color: rgb(2, 157, 224);
+    width: 10px;
+    height: 10px;
+    border-radius: 30%;
+}
+.pequenoButon:hover
+{
+    background-color: red;
+    content: url("/assets/salir.png");
+}
+.categoria_div
+{
+    margin-left: 10px;
+}
+
+.tipos_div
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tipos_div_none
+{
+    display: none;
+}
+
+.pequenoButon_tipos
+{
+    position: relative;
+    top: 22.5%;
+    right: 16%;
+    background-color: rgb(2, 157, 224);
+    width: 8px;
+    height: 8px;
+    border-radius: 30%;
+}
+.pequenoButon_tipos:hover
+{
+    background-color: red;
+    content: url("/assets/salir.png");
+}

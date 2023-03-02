@@ -1,0 +1,27 @@
+{  
+    "producto":
+    [
+        {
+            "nombre": "producto",
+            "imagen": "",
+            "tipos":
+            [
+                {
+                    "nombre": "modelo",
+                    "imagen": "",
+                    "modelos":
+                    [
+                        {
+                            "modelo": "",
+                            "img": [""],
+                            "especificacion": "",
+                            "precio": 0,
+                            "cantidad": 0
+                        }
+                    ]
+                }   
+            ]
+        }
+    ]
+    
+}

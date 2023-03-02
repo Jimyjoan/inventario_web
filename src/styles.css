@@ -1,0 +1,42 @@
+:root
+{
+    --color_naranja1: rgb(251, 137, 22); 
+    --color_naranja2: rgb(252, 172, 49);
+    --color_naranja3: rgb(255, 181 ,48);
+
+    --color_azul1: rgb(2, 157, 224);
+    --color_azul2: rgb(5, 173, 235);
+    --color_azul3: rgb(0, 183, 241);
+
+    --color_oscuro: rgb(33, 31, 32);
+}
+body
+{
+    margin: 0px;
+    background-color: #e0e0e0cb;
+    width: auto;
+    height: auto;
+}
+h1, h2, h3, h4, h5, label
+{
+    margin: 0px;
+    text-shadow: 0px 0px 1px;
+}
+
+h2
+{
+    font-size: 16px;
+}
+h3, label
+{
+    margin-top: 3px;
+    font-size: 14px;
+}
+h4
+{
+    font-size: 11px;
+}
+h5
+{
+    font-size: 10px;
+}

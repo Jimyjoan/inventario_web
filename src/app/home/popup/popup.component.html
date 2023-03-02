@@ -1,0 +1,18 @@
+<div class="divParteTrasera" [ngStyle]="style_visibility" (click)="ocultar()"></div>
+
+<div class="divcontenedor" [ngStyle]=" style_visibility">
+
+  <div *ngIf="opcion; then luego else opcionNotificar"></div>
+  <ng-template #luego>
+    <div class="cada_imagen">
+      <h3>{{producto}}</h3>
+      <div *ngFor="let url of imagen">
+        <img [src]="url" alt="">
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #opcionNotificar>
+    
+  </ng-template>
+
+</div>

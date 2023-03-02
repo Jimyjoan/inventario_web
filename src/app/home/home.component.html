@@ -1,0 +1,90 @@
+<div class="contenedor" [ngStyle]="blur">
+
+  <div class="opciones">
+    <h2 style="z-index: 2;">Categorias</h2>
+    <h2 *ngIf="ocultarProduct" style="z-index: 1;">Productos</h2>
+    <h2 style="z-index: 0;" class="direccion" >{{urldelapp}}</h2>
+  </div>
+
+  <div class="contenidos">
+    <div class="categorias">
+      <div style="display: flex; flex-direction: column;" *ngFor="let producto_div of producto; let i = index">
+        <ng-template [ngIf]="producto_div !== null && producto_div !== undefined">
+          <div style="display: flex; flex-direction: row; height: 40px;">
+            <!-- <button #lista_categoria class="categoria_div" (click)="ponerCategoria($event.target, i)">{{producto_div.nombre}}</button> -->
+            <input [readonly]="ReadOnly" (dblclick)="quitarSoloLectura(false)" (focus)="quitarSoloLectura(true)" type="text" class="encima_boton categoria_div" (click)="ponerCategoria(producto_div.nombre, i)" (keyup.enter)="actualizar()" [(ngModel)]="producto_div.nombre"/>
+            <div class="pequenoButon" (dblclick)="eliminarProducto(i, 'categoria')"></div>
+          </div>
+          
+          <div #lista_modelos class="tipos_div tipos_div_none">
+            <div *ngFor="let tipos_div of producto_div.tipos; let ind = index" style="display:flex; flex-direction: row;">
+              <ng-template [ngIf]="tipos_div !== null && tipos_div !== undefined">
+                <!-- <button (click)="ponerTipo($event.target, ind)" class="opciones_categorias">{{tipos_div.nombre}}</button> -->
+                <input [readonly]="ReadOnly" (dblclick)="quitarSoloLectura(false)" (focus)="quitarSoloLectura(true)" type="text" class="encima_boton opciones_categorias" (click)="ponerTipo(tipos_div.nombre, ind)" (keyup.enter)="actualizar()" [(ngModel)]="tipos_div.nombre"/>
+                <div class="pequenoButon_tipos" (dblclick)="eliminarProducto(ind, 'tipos')"></div>
+              </ng-template>
+            </div>
+            <input [@input_boton]="ocultarPH ? true : false" class="opciones_categorias2 encima_boton" [(ngModel)]="newcatipoinput" (keyup.enter)="nuevoTipo(i)" (focus)="quitarPHTip()" (blur)="quitarPHTip()" [placeholder]="newtiposinputPH"/>
+          </div>
+        </ng-template>
+      </div>
+      <input [@input_boton]="ocultarPH ? true : false" class="encima_boton" [(ngModel)]="newcategoriainput" (focus)="quitarPHCat()" (blur)="quitarPHCat()" (keyup.enter)="nuevaCategoria()" [placeholder]="newcategoriainputPH"/>
+    </div>
+
+    <div *ngIf="ocultarProduct" class="producto">
+      <div style="display: flex;" *ngFor="let producto of tipo; let id = index">
+        <ng-template [ngIf]="producto !== null">
+          <img (click)="ponerModelo(producto.modelo, producto, id) "class="img-product" src="./assets/telefono.png" alt="">
+          <div class="pequenoButon" (dblclick)="eliminarProducto(id, 'modelos')"></div>
+          <div class="product_info">
+            <h5 class="modelo-product">{{producto.modelo}}</h5>
+            <h4 class="precio-product">{{producto.precio}}</h4>
+            <h4 class="cantidad-product">{{producto.cantidad}}</h4>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+    <div *ngIf="ocultarCrud">
+      <div class="infos">
+
+        <div class="barra-busqueda">
+          <img src="./assets/icono-buscar.png" alt="">
+          <input class="barra-text imput" type="text"/>
+        </div>
+
+        <form class="crud" #f="ngForm" (ngSubmit)="nuevoModelo(f)">
+          
+          <div class="datos_crud">
+            <label for="foto">
+              Seleccionar imagen
+              <input (change)="imagen($event)" id="foto" class="text-file imput" type="file" accept="image/png, image/jpg, image/jpeg" multiple name="imagen"/>
+              <div class="camara-orden">
+                <img class="camara" src="./assets/camara-icono.png" alt="">
+                <input [value]="text" type="text" class="span-camara imput" readonly/>
+              </div>
+            </label>
+
+            <h3>Nombre del Producto</h3>
+            <input class="barras-llenar imput" type="text" name="modelo" [(ngModel)]="modelo"/>
+            <h3>Precio</h3>
+            <input class="barras-llenar imput" type="text" name="precio" [(ngModel)]="precio"/>
+            <h3>Cantidad</h3>
+            <input class="barras-llenar imput" type="text" name="cantidad" [(ngModel)]="cantidad"/>
+
+          </div>
+          <div class="textespec">
+            <h3>Especificacion</h3>
+            <textarea name="especificacion" [(ngModel)]="especificacion"></textarea>
+            <button type="submit">Agregar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-popup 
+[style_visibility]="ocultar"
+[producto]="parabucle"
+[imagen]="urlbucle"
+[opcion]="opcion"
+(mensaje)="click_partetrasera()"></app-popup>
